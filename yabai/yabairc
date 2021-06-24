@@ -1,0 +1,26 @@
+# Big sur scripting addition
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# General layout setup
+yabai -m config layout bsp
+yabai -m config split_ratio 0.5
+
+# Padding/gaps
+yabai -m config top_padding    20
+yabai -m config bottom_padding 20
+yabai -m config left_padding   20
+yabai -m config right_padding  20
+yabai -m config window_gap     20
+
+# Remove shadows
+yabai -m config window_shadow float
+
+# Rules
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add title="^Hotkey Window$" manage=off
+
+# Ubersicht
+yabai -m config external_bar main:40:0
+
